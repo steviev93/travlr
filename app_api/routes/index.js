@@ -7,7 +7,7 @@ router
     .route('/trips')
     .get(tripsController.tripsList);
 
-    router
+router
     .route('/trips/:tripCode')
     .get(tripsController.tripsFindCode);
 
