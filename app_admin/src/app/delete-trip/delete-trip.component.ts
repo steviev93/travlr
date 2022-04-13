@@ -44,13 +44,13 @@ export class DeleteTripComponent implements OnInit {
       .then(data => {
         console.log(data);
         // Don't use editForm.setValue() as it will throw console error
-        this.deleteForm.patchValue(data);
+        this.deleteForm.patchValue(data[0]);
     })
   }
 
    onSubmit() {
     if (this.deleteForm.valid) {
-      this.tripService.deleteTrip(this.deleteForm.value)
+      this.tripService.deleteTrip(this.deleteForm.value.code)
         .then(data => {
           console.log(data);
           this.router.navigate(['']);

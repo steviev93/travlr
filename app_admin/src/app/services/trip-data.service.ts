@@ -31,21 +31,21 @@ export class TripDataService {
       .catch(this.handleError);
   };
 
-  public getTrip(tripCode: string): Promise<Trip> {
+  public getTrip(tripCode: string): Promise<Trip[]> {
     console.log('Inside TripDataService#getTrip(tripCode)');
     return this.http
       .get(this.tripUrl + tripCode)
       .toPromise()
-      .then(response => response as Trip)
+      .then(response => response as Trip[])
       .catch(this.handleError);
   };
 
-  public deleteTrip(tripCode: string): Promise<Trip> {
+  public deleteTrip(tripCode: string): Promise<Trip[]> {
     console.log('Inside TripDataService#getTrip(tripCode)');
     return this.http
       .delete(this.tripUrl + tripCode)
       .toPromise()
-      .then(response => response as Trip)
+      .then(response => response as Trip[])
       .catch(this.handleError);
   };
 

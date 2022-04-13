@@ -38,7 +38,7 @@ const tripsFindCode = async (req, res) => {
                     .json(err);
             } else {
                 return res
-                    .status(404)
+                    .status(200)
                     .json(trip);
             }
         });
@@ -58,7 +58,7 @@ const tripDelete = async (req, res) => {
                   .json(err);
           } else {
               return res
-                  .status(404)
+                  .status(200)
                   .json(trip);
           }
       });
@@ -83,7 +83,7 @@ const tripsAddTrip = async (req, res) => {
               .json(err);
           } else {
             return res
-              .status(201) //creates
+              .status(200) //creates
               .json(trip);
           }
 
@@ -113,7 +113,7 @@ const tripsAddTrip = async (req, res) => {
               message: "Trip not found with code " + req.params.tripCode,
             });
           }
-          res.send(trip);
+          res.status(200).send(trip);
         })
         .catch((err) => {
           if (err.kind === "ObjectId") {
