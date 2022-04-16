@@ -15,10 +15,10 @@
         </div>
     </div>
     <div>
-        <button (click)="editTrip(trip)" class="btn btn-info">
+        <button (click)="editTrip(trip)" *ngIf="isLoggedIn()" class="btn btn-info">
             Edit
         </button>
-        <button (click)="deleteTrip(trip)" class="btn btn-danger">
+        <button (click)="deleteTrip(trip)" *ngIf="isLoggedIn()" class="btn btn-danger">
             Delete
         </button>
     </div>
